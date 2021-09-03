@@ -27,7 +27,7 @@ public class PhoneService implements IService<Phone, Long> {
         try{
             return pr.save(phone);
         } catch (Exception e){
-            log.error("Phone can\'t be created");
+            log.error(String.format("The phone %s can\'t be created", phone));
 
             e.printStackTrace();
 
@@ -72,7 +72,7 @@ public class PhoneService implements IService<Phone, Long> {
         try{
             return pr.save(phone);
         } catch (Exception e){
-            log.error("Phone can\'t be updated");
+            log.error(String.format("The phone %s can\'t be updated", phone));
 
             e.printStackTrace();
 

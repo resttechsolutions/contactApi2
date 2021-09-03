@@ -27,7 +27,7 @@ public class AddressService implements IService<Address,Long> {
         try{
             return ar.save(address);
         } catch (Exception e){
-            log.error(String.format("The address %s can\'t be creadted", address));
+            log.error(String.format("The address %s can\'t be created", address));
 
             e.printStackTrace();
 
