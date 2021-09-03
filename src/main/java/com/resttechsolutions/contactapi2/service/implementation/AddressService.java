@@ -27,7 +27,7 @@ public class AddressService implements IService<Address,Long> {
         try{
             return ar.save(address);
         } catch (Exception e){
-            log.error("The address can\'t be creadted");
+            log.error(String.format("The address %s can\'t be creadted", address));
 
             e.printStackTrace();
 
@@ -72,7 +72,7 @@ public class AddressService implements IService<Address,Long> {
         try{
             return ar.save(address);
         } catch (Exception e){
-            log.error("The address can\'t be updated");
+            log.error(String.format("The address %s can\'t be updated", address));
 
             e.printStackTrace();
 
@@ -82,12 +82,12 @@ public class AddressService implements IService<Address,Long> {
 
     @Override
     public void delete(Long aLong) {
-        log.info("Address create init");
+        log.info("Address delete init");
 
         try{
             ar.delete(ar.findById(aLong).get());
         } catch (Exception e){
-            log.error("The address can\'t be creadted");
+            log.error("The address can\'t be deleted");
 
             e.printStackTrace();
         }
